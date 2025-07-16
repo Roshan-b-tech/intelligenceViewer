@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0A0A0A;
+  --color-bg-secondary: #1A1A1A;
+  --color-bg-tertiary: #2A2A2A;
+  --color-border: #333333;
+  --color-text: #E5E5E5;
+  --color-text-secondary: #A0A0A0;
+}
+
+html.light {
+  --color-bg: #F8F9FB;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F1F3F7;
+  --color-border: #E0E0E0;
+  --color-text: #222222;
+  --color-text-secondary: #666666;
+}
+
+html.custom {
+  --color-bg: #FFF8E1;
+  --color-bg-secondary: #FFE0B2;
+  --color-bg-tertiary: #FFD54F;
+  --color-border: #FFA301;
+  --color-text: #3F1470;
+  --color-text-secondary: #5B2A91;
+}
+
+@layer base {
+  * {
+    /* Removed global border and border-dark-border */
+  }
+
+  body {
+    @apply bg-dark-bg text-dark-text;
+  }
+
+  html {
+    /* Removed invalid @apply dark; */
+  }
+}
+
+@layer components {
+  .confidence-animation {
+    animation: confidence-fill 2s ease-out forwards;
+  }
+
+  .slide-in {
+    animation: slide-in 0.3s ease-out forwards;
+  }
+
+  .fade-in {
+    animation: fade-in 0.2s ease-out forwards;
+  }
+
+  .pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3F1470;
+}
+
+/* Smooth transitions */
+* {
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Focus styles */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: rgba(63, 20, 112, 0.5);
+}
