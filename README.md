@@ -16,7 +16,7 @@ A production-ready intelligence report viewer that makes trust and confidence fe
 
 ### Technical Architecture
 - **Frontend**: React + TypeScript + Tailwind CSS + Framer Motion
-- **Backend**: Node.js + Express with request logging and UUID tracing
+- **Backend**: Vercel serverless API routes in `/api` (no Express server needed)
 - **Data**: Mock JSON API with SQLite-compatible structure
 - **Authentication**: JWT-based with hardcoded demo tokens
 - **Monitoring**: Request latency logging with trace headers
@@ -41,12 +41,11 @@ A production-ready intelligence report viewer that makes trust and confidence fe
 # Install dependencies
 npm install
 
-# Start backend server (Terminal 1)
-npm run server
-
-# Start frontend dev server (Terminal 2)
-npm run dev
+# Start local development server (frontend + backend API routes)
+vercel dev
 ```
+- This will run both your React frontend and your API endpoints under `/api` locally at `http://localhost:3000`.
+- You do **not** need to run a separate backend server.
 
 ### Production Build
 ```bash
